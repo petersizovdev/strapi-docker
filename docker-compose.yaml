@@ -15,8 +15,12 @@ services:
       - ADMIN_JWT_SECRET=hQ8A7O5RMMHAi1oMEn8IlA==
       - TRANSFER_TOKEN_SALT=cI/XcjYJCq7QtCSnMyZsuQ==
       - DATABASE_CLIENT=sqlite
-      - DATABASE_FILENAME=.tmp/data.db
+      - DATABASE_FILENAME=/data/data.db
     volumes:
-      - ./src:/usr/src/app/src
-      - ./tmp:/usr/src/app/.tmp
+      - strapi-app-data:/usr/src/app/src
+      - strapi-db-data:/data
     restart: always
+
+volumes:
+  strapi-app-data:
+  strapi-db-data:
