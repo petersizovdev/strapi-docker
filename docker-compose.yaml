@@ -1,9 +1,18 @@
-version: "3"
+version: '3'
 
 services:
   strapi:
     build: .
     ports:
-      - "544:1337"
+      - "1337:1337"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=1337
+      - APP_KEYS=C3254IyAQ9UnBdBuq91YrQ==,WEpaSO+T6nddGFNAkvr0NQ==,8gpnP7/LnYmM94hVbi4zGw==,Y4J6k9HQ/nPAxHViliwlCQ==
+      - API_TOKEN_SALT=hVWjY7sigyhaIrB80j/YqA==
+      - ADMIN_JWT_SECRET=hQ8A7O5RMMHAi1oMEn8IlA==
+      - TRANSFER_TOKEN_SALT=cI/XcjYJCq7QtCSnMyZsuQ==
+      - DATABASE_CLIENT=sqlite
+      - DATABASE_FILENAME=.tmp/data.db
     volumes:
       - ./src:/usr/src/app/src
