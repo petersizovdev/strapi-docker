@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  strapi:
+    build: .
+    ports:
+      - "544:1337"
+    volumes:
+      - ./src:/usr/src/app/src
