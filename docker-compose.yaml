@@ -18,4 +18,5 @@ services:
       - DATABASE_FILENAME=.tmp/data.db
     volumes:
       - ./src:/usr/src/app/src
+      - ./tmp:/usr/src/app/.tmp
     restart: always
