@@ -1,7 +1,9 @@
-version: '3'
+version: "3"
 
 services:
   strapi:
+    image: pitersizovdev/strapitest:latest
+    container_name: strapi-test
     build: .
     ports:
       - "544:1337"
@@ -16,3 +18,4 @@ services:
       - DATABASE_FILENAME=.tmp/data.db
     volumes:
       - ./src:/usr/src/app/src
+    restart: always
